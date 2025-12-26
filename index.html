@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premier Schools Exhibition</title>
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      :root {
+        --dark: #1b0f3b;
+        --main: #5a2dbf;
+        --mid: #3b177b;
+        --lav: #efe4ff;
+        --gold: #ffd88a;
+        --light-bg: #f9f7ff;
+      }
+
+      /* ================= HERO ================= */
+      .hero {
+        background: linear-gradient(135deg, var(--dark), var(--main));
+        padding: 30px 80px 120px;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+      }
+
+      .logo {
+        height: 112px;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+      }
+
+      .btn-outline {
+        border: 2px solid #fff;
+        padding: 10px 24px;
+        color: #fff;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        background: transparent;
+        backdrop-filter: blur(10px);
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 40px;
+        margin-top: 60px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .hero-left h1 {
+        font-size: 56px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-left span {
+        color: var(--gold);
+        position: relative;
+      }
+
+      .hero-left span::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: rgba(255, 216, 138, 0.2);
+        z-index: -1;
+      }
+
+      .subtitle {
+        letter-spacing: 3px;
+        margin: 12px 0 32px;
+        font-weight: 400;
+        opacity: 0.9;
+      }
+
+      .event-box {
+        background: var(--gold);
+        color: #000;
+        padding: 22px 28px;
+        border-radius: 18px;
+        width: fit-content;
+        margin-top: 30px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .event-box:hover {
+        transform: translateY(-5px);
+      }
+
+      .event-box strong {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .hero-right {
+        position: relative;
+        height: 480px;
+      }
+
+      .hero-right img {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        animation: floatCircle 25s infinite ease-in-out;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-right img:nth-child(1) {
+        animation-delay: 0s;
+        left: 10px;
+        top: 50px;
+        z-index: 3;
+      }
+
+      .hero-right img:nth-child(2) {
+        animation-delay: -12s;
+        left: 150px;
+        top: 150px;
+        z-index: 2;
+        width: 220px;
+        height: 220px;
+      }
+
+      @keyframes floatCircle {
+        0% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 1;
+        }
+        25% {
+          transform: translateY(-100px) translateX(80px) rotate(5deg);
+          opacity: 0.9;
+        }
+        50% {
+          transform: translateY(-180px) translateX(160px) rotate(0deg);
+          opacity: 0.8;
+        }
+        75% {
+          transform: translateY(-100px) translateX(80px) rotate(-5deg);
+          opacity: 0.9;
+        }
+        100% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      .enquiry-box {
+        position: absolute;
+        right: 80px;
+        top: 200px;
+        background: rgba(58, 28, 120, 0.9);
+        padding: 32px;
+        border-radius: 24px;
+        width: 320px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+      }
+
+      .enquiry-box h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        color: var(--gold);
+      }
+
+      .enquiry-box input {
+        width: 100%;
+        padding: 14px 18px;
+        margin-bottom: 16px;
+        border: none;
+        border-radius: 12px;
+        font-family: "Poppins", sans-serif;
+        background: rgba(255, 255, 255, 0.95);
+        transition: all 0.3s ease;
+      }
+
+      .enquiry-box input:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(90, 45, 191, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--main), #7a52d9);
+        color: #fff;
+        border: none;
+        padding: 16px 32px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        width: 100%;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        box-shadow: 0 10px 20px rgba(90, 45, 191, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(90, 45, 191, 0.4);
+        background: linear-gradient(135deg, #6a3dd1, #8a65e6);
+      }
+
+      /* ================= STATS ================= */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 80px 80px;
+        text-align: center;
+        background: var(--light-bg);
+        position: relative;
+        z-index: 2;
+        margin-top: -40px;
+        border-radius: 40px 40px 0 0;
+      }
+
+      .stat {
+        font-size: 42px;
+        font-weight: 700;
+        color: var(--dark);
+        position: relative;
+        padding: 20px;
+      }
+
+      .stat span {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--mid);
+        margin-top: 10px;
+      }
+
+      .stat::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 60%;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--mid),
+          transparent
+        );
+        right: 0;
+        top: 20%;
+      }
+
+      .stat:last-child::after {
+        display: none;
+      }
+
+      /* ================= SCHOOLS ================= */
+      .schools {
+        padding: 100px 80px;
+        text-align: center;
+        background: #fff;
+      }
+
+      .schools h2 {
+        font-size: 36px;
+        color: var(--dark);
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .schools h2::after {
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: 4px;
+        background: var(--main);
+        bottom: -10px;
+        left: 20%;
+        border-radius: 2px;
+      }
+
+      .school-logos {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px;
+        margin-top: 50px;
+        align-items: center;
+      }
+
+      .school-logos img {
+        max-width: 100%;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        padding: 20px;
+        border-radius: 16px;
+      }
+
+      .school-logos img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(90, 45, 191, 0.1);
+        background: rgba(239, 228, 255, 0.3);
+      }
+
+      /* ================= CATEGORIES ================= */
+      .categories {
+        padding: 100px 80px;
+        background: var(--light-bg);
+      }
+
+      .categories h2 {
+        font-size: 36px;
+        color: var(--dark);
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+
+      .card {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        background: #fff;
+        position: relative;
+      }
+
+      .card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 35px 70px rgba(90, 45, 191, 0.2);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(90deg, var(--main), var(--mid));
+        z-index: 2;
+      }
+
+      .card img {
+        height: 240px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .card:hover img {
+        transform: scale(1.05);
+      }
+
+      .card h3 {
+        padding: 24px 24px 8px;
+        color: var(--dark);
+        font-size: 20px;
+      }
+
+      .card p {
+        padding: 0 24px 24px;
+        font-size: 15px;
+        color: #666;
+      }
+
+      /* ================= APPOINTMENT ================= */
+      .appointment {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 100px 80px;
+        background: linear-gradient(
+          90deg,
+          #efe4ff 0%,
+          #f6f0ff 55%,
+          transparent 75%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .appointment::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          #efe4ff 0%,
+          rgba(239, 228, 255, 0.95) 45%,
+          rgba(239, 228, 255, 0.4) 60%,
+          transparent 75%
+        );
+        z-index: 1;
+      }
+
+      .appointment * {
+        position: relative;
+        z-index: 2;
+      }
+
+      .appointment-text {
+        padding-right: 60px;
+      }
+
+      .appointment-text .small {
+        color: var(--main);
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .appointment-text h2 {
+        font-size: 42px;
+        color: var(--dark);
+        line-height: 1.2;
+        margin-bottom: 15px;
+      }
+
+      .appointment-text .muted {
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 18px;
+      }
+
+      .appointment-text .btn-primary {
+        width: auto;
+        padding: 18px 40px;
+        font-size: 18px;
+      }
+
+      /* Dispersed Image Effect */
+      .image-dispersed-container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        margin-left: -80px;
+      }
+
+      .image-dispersed-base {
+        position: absolute;
+        width: 80%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 24px;
+        box-shadow: 0 30px 60px rgba(90, 45, 191, 0.2);
+        border: 8px solid white;
+        z-index: 5;
+        right: 0;
+      }
+
+      .image-particle {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        border: 4px solid white;
+        opacity: 0;
+        animation: particleFloat 15s infinite ease-in-out;
+      }
+
+      .particle-1 {
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+        z-index: 4;
+      }
+
+      .particle-2 {
+        top: 40%;
+        left: 0%;
+        animation-delay: 2s;
+        z-index: 3;
+      }
+
+      .particle-3 {
+        top: 70%;
+        left: 8%;
+        animation-delay: 4s;
+        z-index: 2;
+      }
+
+      .particle-4 {
+        top: 20%;
+        left: 15%;
+        animation-delay: 6s;
+        z-index: 1;
+      }
+
+      .particle-5 {
+        top: 60%;
+        left: 12%;
+        animation-delay: 8s;
+        z-index: 4;
+      }
+
+      @keyframes particleFloat {
+        0%,
+        100% {
+          opacity: 0;
+          transform: translateX(0) translateY(0) rotate(0deg);
+        }
+        20% {
+          opacity: 0.9;
+          transform: translateX(-40px) translateY(-20px) rotate(5deg);
+        }
+        40% {
+          opacity: 0.7;
+          transform: translateX(-80px) translateY(10px) rotate(-5deg);
+        }
+        60% {
+          opacity: 0.9;
+          transform: translateX(-60px) translateY(-10px) rotate(3deg);
+        }
+        80% {
+          opacity: 0.7;
+          transform: translateX(-20px) translateY(15px) rotate(-3deg);
+        }
+      }
+
+      /* ================= MUST VISIT ================= */
+      .why {
+        background: linear-gradient(180deg, var(--mid), var(--dark));
+        padding: 120px 80px 160px;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .why h2 {
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 80px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .why-grid {
+        display: flex;
+        gap: 32px;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        position: relative;
+        z-index: 5;
+        padding: 10px 5px 40px;
+      }
+
+      .why-card {
+        min-width: 360px;
+        background: var(--lav);
+        color: var(--dark);
+        padding: 40px 32px;
+        border-radius: 28px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .why-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, var(--main), var(--mid));
+      }
+
+      .why-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+      }
+
+      .why-card img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 25px;
+        filter: drop-shadow(0 5px 10px rgba(90, 45, 191, 0.2));
+      }
+
+      .why-card h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        line-height: 1.3;
+      }
+
+      .why-card p {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .why-controls {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 20px;
+        z-index: 10;
+      }
+
+      .why-controls button {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        background: #fff;
+        color: var(--main);
+        font-size: 24px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .why-controls button:hover {
+        background: var(--main);
+        color: #fff;
+        transform: scale(1.1);
+      }
+
+      /* ================= FOOTER ================= */
+      .footer {
+        background: linear-gradient(135deg, #3b177b, #0c0833);
+        color: #fff;
+        padding: 80px 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--gold), var(--main));
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: 1.2fr 2fr 2fr 1.5fr 1.2fr;
+        gap: 40px;
+        align-items: flex-start;
+        position: relative;
+        z-index: 2;
+      }
+
+      .footer-logo img {
+        width: 160px;
+        filter: brightness(0) invert(1);
+      }
+
+      .footer-item {
+        display: flex;
+        gap: 20px;
+      }
+
+      .footer-icon {
+        background: var(--lav);
+        color: var(--mid);
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .footer-item h4 {
+        font-size: 18px;
+        margin-bottom: 12px;
+        color: var(--gold);
+      }
+
+      .footer-item p {
+        font-size: 15px;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 16px;
+        margin-top: 15px;
+      }
+
+      .social-icons a {
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        background: var(--lav);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        background: var(--main);
+        transform: translateY(-5px);
+      }
+
+      .social-icons img {
+        width: 24px;
+        height: 24px;
+        filter: brightness(0) saturate(100%) invert(20%) sepia(30%)
+          saturate(2000%) hue-rotate(240deg) brightness(90%) contrast(90%);
+      }
+
+      .social-icons a:hover img {
+        filter: brightness(0) invert(1);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 60px;
+        padding: 25px 0;
+        font-size: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        opacity: 0.8;
+      }
+
+      /* ================= RESPONSIVE ================= */
+      @media (max-width: 1200px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+        }
+
+        .enquiry-box {
+          position: relative;
+          right: auto;
+          top: auto;
+          margin-top: 40px;
+          width: 100%;
+          max-width: 400px;
+        }
+
+        .hero-right {
+          height: 300px;
+          margin-top: 40px;
+        }
+
+        .appointment {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .appointment-text {
+          padding-right: 0;
+          margin-bottom: 50px;
+        }
+
+        .image-dispersed-container {
+          margin-left: 0;
+          height: 400px;
+        }
+
+        .footer-container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 992px) {
+        .hero,
+        .stats,
+        .schools,
+        .categories,
+        .appointment,
+        .why,
+        .footer {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+        }
+
+        .stat::after {
+          display: none;
+        }
+
+        .category-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .school-logos {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+
+        .footer-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 20px 20px 80px;
+        }
+
+        .hero-left h1 {
+          font-size: 36px;
+        }
+
+        .hero-right {
+          height: 250px;
+        }
+
+        .hero-right img {
+          width: 150px;
+          height: 150px;
+        }
+
+        .stats {
+          padding: 60px 20px;
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .schools,
+        .categories,
+        .appointment,
+        .why,
+        .footer {
+          padding: 60px 20px;
+        }
+
+        .category-grid,
+        .school-logos {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-container {
+          grid-template-columns: 1fr;
+        }
+
+        .image-dispersed-container {
+          height: 300px;
+        }
+
+        .why-card {
+          min-width: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= HERO ================= -->
+    <header class="hero">
+      <nav class="navbar">
+        <img
+          src="assets/Mask group.png"
+          class="logo"
+          alt="Premier Schools Exhibition Logo"
+        />
+        <a href="#" class="btn-outline">Register Now</a>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-left">
+          <h1>Discover Gurugram’s<br /><span>Top 30+ Schools</span></h1>
+          <p class="subtitle">ALL IN ONE PLACE</p>
+
+          <div class="event-box">
+            <strong>Apparel House, Sec 44, Gurugram</strong>
+            <p>2–3 August 2025 | Sat–Sun | 10AM – 6PM</p>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <img src="assets/16.png" alt="School students" />
+          <img src="assets/19.png" alt="School campus" />
+        </div>
+
+        <div class="enquiry-box">
+          <h3>Enquire Now</h3>
+          <input type="text" placeholder="Parent's Name" />
+          <input type="text" placeholder="Phone Number" />
+          <input type="text" placeholder="Which grade are you looking for?" />
+          <button class="btn-primary">Submit</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= STATS ================= -->
+    <section class="stats">
+      <div class="stat">1 Million+<span>Parents Trust Us</span></div>
+      <div class="stat">22+<span>Years of Legacy</span></div>
+      <div class="stat">500+<span>Participating Schools</span></div>
+      <div class="stat">17<span>Cities Worldwide</span></div>
+    </section>
+
+    <!-- ================= SCHOOLS ================= -->
+    <section class="schools">
+      <h2>Participating Schools</h2>
+      <div class="school-logos">
+        <img src="assets/Group 1000004125.png" alt="School Logo" />
+        <img src="assets/Group 1000004126.png" alt="School Logo" />
+        <img src="assets/Group 1000004127.png" alt="School Logo" />
+        <img src="assets/Group 1000004128.png" alt="School Logo" />
+        <img src="assets/Group 1000004130.png" alt="School Logo" />
+      </div>
+    </section>
+
+    <!-- ================= CATEGORIES ================= -->
+    <section class="categories">
+      <h2>Choose the School That Fits You Best</h2>
+      <div class="category-grid">
+        <div class="card">
+          <img src="assets/01.png" alt="Pre-school children" />
+          <h3>Pre-Schools & Early Learning</h3>
+          <p>Nurturing foundational skills with care and creativity.</p>
+        </div>
+        <div class="card">
+          <img src="assets/02.png" alt="K-12 students" />
+          <h3>K-12 CBSE Day Schools</h3>
+          <p>Complete schooling with holistic development.</p>
+        </div>
+        <div class="card">
+          <img src="assets/03.png" alt="Modern school" />
+          <h3>Heritage to New-Age</h3>
+          <p>Blending tradition with future-ready education.</p>
+        </div>
+        <div class="card">
+          <img src="assets/04.png" alt="International school" />
+          <h3>International Schools</h3>
+          <p>IB, Cambridge & global curriculum options.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= APPOINTMENT ================= -->
+    <section class="appointment">
+      <div class="appointment-text">
+        <p class="small">Exciting Opportunities for Parents!</p>
+        <h2>Pre-schedule Your<br />School Appointments</h2>
+        <p class="muted">To Avoid Rush and Get Priority Access</p>
+        <button class="btn-primary">Pre-Schedule Now</button>
+      </div>
+
+      <!-- Dispersed Image Container -->
+      <div class="image-dispersed-container">
+        <img
+          src="assets/DSC08923 1.png"
+          alt="Parent meeting with school representative"
+          class="image-dispersed-base"
+        />
+        <img src="assets/16.png" alt="" class="image-particle particle-1" />
+        <img src="assets/19.png" alt="" class="image-particle particle-2" />
+        <img src="assets/01.png" alt="" class="image-particle particle-3" />
+        <img src="assets/02.png" alt="" class="image-particle particle-4" />
+        <img src="assets/03.png" alt="" class="image-particle particle-5" />
+      </div>
+    </section>
+
+    <!-- ================= MUST VISIT ================= -->
+    <section class="why">
+      <h2>What Makes This Exhibition a Must-Visit</h2>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <img src="assets/what/Group 1171275398.png" alt="Interaction icon" />
+          <h3>Interact directly with school heads</h3>
+          <p>Get answers straight from the experts and decision-makers.</p>
+        </div>
+        <div class="why-card">
+          <img src="assets/what/Group 1171275399.png" alt="Curriculum icon" />
+          <h3>Compare curriculum & pedagogy</h3>
+          <p>
+            Understand the differences between CBSE, ICSE, IB, Cambridge,
+            Finnish & more.
+          </p>
+        </div>
+        <div class="why-card">
+          <img
+            src="assets/what/Group 1171275400.png"
+            alt="Fee structure icon"
+          />
+          <h3>Get exclusive fee structures</h3>
+          <p>
+            Access transparent information and avail special exhibition offers.
+          </p>
+        </div>
+        <div class="why-card">
+          <img
+            src="assets/what/Group 1171275401.png"
+            alt="Infrastructure icon"
+          />
+          <h3>Explore infrastructure & culture</h3>
+          <p>
+            Preview facilities, co-curricular activities, teaching methodology
+            and school culture.
+          </p>
+        </div>
+        <div class="why-card">
+          <img src="assets/what/Group 1171275402.png" alt="Counselling icon" />
+          <h3>On-the-spot counselling</h3>
+          <p>
+            Save time with instant applications and personalized expert
+            guidance.
+          </p>
+        </div>
+      </div>
+
+      <div class="why-controls">
+        <button class="why-prev">←</button>
+        <button class="why-next">→</button>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <img src="assets/footer-logo.png" alt="Premier Schools Exhibition" />
+        </div>
+
+        <!-- Corporate Office -->
+        <div class="footer-item">
+          <div class="footer-icon">📍</div>
+          <div>
+            <h4>Corporate Office:</h4>
+            <p>
+              Suite B-5, Ballygunge Park Tower,<br />
+              67B Ballygunge Circular Road,<br />
+              Kolkata - 700019
+            </p>
+          </div>
+        </div>
+
+        <!-- Ahmedabad Office -->
+        <div class="footer-item">
+          <div class="footer-icon">📍</div>
+          <div>
+            <h4>Ahmedabad Office:</h4>
+            <p>
+              12/AA, Swastik Chambers, Near CU<br />
+              Shah College, Ashram Road,<br />
+              Ahmedabad - 380009
+            </p>
+          </div>
+        </div>
+
+        <!-- Call Us -->
+        <div class="footer-item">
+          <div class="footer-icon">📞</div>
+          <div>
+            <h4>Call us on</h4>
+            <p>
+              9674805912<br />
+              9674585012
+            </p>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-item">
+          <div>
+            <h4>Follow us on</h4>
+            <div class="social-icons">
+              <a href="#"
+                ><img src="assets/what/Group 1171275371.png" alt="Facebook"
+              /></a>
+              <a href="#"
+                ><img src="assets/what/Group 1171275372.png" alt="Twitter"
+              /></a>
+              <a href="#"
+                ><img src="assets/what/Group 1171275373.png" alt="Instagram"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 | All rights reserved. Premier Schools Exhibition
+      </div>
+    </footer>
+
+    <script>
+      // Why section carousel
+      const whyGrid = document.querySelector(".why-grid");
+      const whyPrev = document.querySelector(".why-prev");
+      const whyNext = document.querySelector(".why-next");
+
+      whyNext.addEventListener("click", () => {
+        whyGrid.scrollBy({ left: 400, behavior: "smooth" });
+      });
+
+      whyPrev.addEventListener("click", () => {
+        whyGrid.scrollBy({ left: -400, behavior: "smooth" });
+      });
+
+      // Form submission
+      const enquiryForm = document.querySelector(".enquiry-box");
+      const submitBtn = enquiryForm.querySelector(".btn-primary");
+
+      submitBtn.addEventListener("click", function () {
+        const inputs = enquiryForm.querySelectorAll("input");
+        let allFilled = true;
+
+        inputs.forEach((input) => {
+          if (!input.value.trim()) {
+            allFilled = false;
+            input.style.border = "2px solid #ff6b6b";
+          } else {
+            input.style.border = "none";
+          }
+        });
+
+        if (allFilled) {
+          submitBtn.innerHTML = '<i class="fas fa-check"></i> Submitted!';
+          submitBtn.style.background =
+            "linear-gradient(135deg, #2ecc71, #27ae60)";
+          setTimeout(() => {
+            submitBtn.innerHTML = "Submit";
+            submitBtn.style.background =
+              "linear-gradient(135deg, var(--main), #7a52d9)";
+            inputs.forEach((input) => (input.value = ""));
+          }, 2000);
+        } else {
+          submitBtn.innerHTML =
+            '<i class="fas fa-exclamation-triangle"></i> Fill all fields';
+          submitBtn.style.background =
+            "linear-gradient(135deg, #e74c3c, #c0392b)";
+          setTimeout(() => {
+            submitBtn.innerHTML = "Submit";
+            submitBtn.style.background =
+              "linear-gradient(135deg, var(--main), #7a52d9)";
+          }, 2000);
+        }
+      });
+
+      // Add hover effects to all buttons
+      document.querySelectorAll(".btn-primary, .btn-outline").forEach((btn) => {
+        btn.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-3px)";
+        });
+
+        btn.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0)";
+        });
+      });
+
+      // Animate stats on scroll
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll(".stat");
+            statNumbers.forEach((stat) => {
+              stat.style.opacity = "1";
+              stat.style.transform = "translateY(0)";
+            });
+          }
+        });
+      }, observerOptions);
+
+      const statsSection = document.querySelector(".stats");
+      if (statsSection) observer.observe(statsSection);
+
+      // Initialize with some animations
+      document.querySelectorAll(".stat").forEach((stat) => {
+        stat.style.opacity = "0";
+        stat.style.transform = "translateY(20px)";
+        stat.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+      });
+    </script>
+  </body>
+</html>
