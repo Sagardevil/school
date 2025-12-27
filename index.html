@@ -46,6 +46,19 @@
         color: #fff;
         position: relative;
         overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      /* White navbar area */
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 150px; /* Height of white area */
+        background: #ffffff;
+        z-index: 1;
       }
 
       .navbar {
@@ -62,9 +75,9 @@
       }
 
       .btn-outline {
-        border: 2px solid #fff;
+        border: 2px solid var(--main);
         padding: 10px 24px;
-        color: #fff;
+        color: var(--main);
         border-radius: 50px;
         text-decoration: none;
         font-weight: 500;
@@ -74,9 +87,10 @@
       }
 
       .btn-outline:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--main);
+        color: #fff;
         transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 20px rgba(90, 45, 191, 0.2);
       }
 
       .hero-content {
@@ -145,15 +159,16 @@
         height: 480px;
       }
 
+      /* Horizontal capsule-shaped images (more height, less width) */
       .hero-right img {
         position: absolute;
-        width: 200px;
-        height: 200px;
+        width: 180px; /* Less width */
+        height: 240px; /* More height */
         object-fit: cover;
-        border-radius: 24px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-        animation: floatCircle 25s infinite ease-in-out;
-        border: 4px solid rgba(255, 255, 255, 0.2);
+        border-radius: 90px; /* Half of height to create capsule shape */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        animation: floatCapsuleHorizontal 25s infinite ease-in-out;
       }
 
       .hero-right img:nth-child(1) {
@@ -168,30 +183,43 @@
         left: 150px;
         top: 150px;
         z-index: 2;
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 260px;
       }
 
-      @keyframes floatCircle {
+      /* Horizontal capsule animation - bottom to top disappearing */
+      @keyframes floatCapsuleHorizontal {
         0% {
-          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 0;
+          transform: translateY(300px) translateX(0) rotate(0deg);
+        }
+        10% {
+          opacity: 0;
+          transform: translateY(300px) translateX(0) rotate(0deg);
+        }
+        20% {
           opacity: 1;
+          transform: translateY(250px) translateX(20px) rotate(2deg);
         }
-        25% {
-          transform: translateY(-100px) translateX(80px) rotate(5deg);
-          opacity: 0.9;
+        40% {
+          opacity: 1;
+          transform: translateY(150px) translateX(40px) rotate(0deg);
         }
-        50% {
-          transform: translateY(-180px) translateX(160px) rotate(0deg);
-          opacity: 0.8;
+        60% {
+          opacity: 1;
+          transform: translateY(50px) translateX(20px) rotate(-2deg);
         }
-        75% {
-          transform: translateY(-100px) translateX(80px) rotate(-5deg);
-          opacity: 0.9;
+        80% {
+          opacity: 0.5;
+          transform: translateY(-100px) translateX(0) rotate(0deg);
+        }
+        90% {
+          opacity: 0;
+          transform: translateY(-150px) translateX(-20px) rotate(2deg);
         }
         100% {
-          transform: translateY(0) translateX(0) rotate(0deg);
-          opacity: 1;
+          opacity: 0;
+          transform: translateY(300px) translateX(0) rotate(0deg);
         }
       }
 
@@ -508,14 +536,14 @@
 
       .image-particle {
         position: absolute;
-        width: 120px;
-        height: 120px;
+        width: 180px; /* Horizontal capsule shape */
+        height: 240px; /* More height */
         object-fit: cover;
-        border-radius: 16px;
+        border-radius: 120px; /* Capsule shape */
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         border: 4px solid white;
         opacity: 0;
-        animation: particleFloat 15s infinite ease-in-out;
+        animation: particleFloatHorizontal 15s infinite ease-in-out;
       }
 
       .particle-1 {
@@ -530,6 +558,8 @@
         left: 0%;
         animation-delay: 2s;
         z-index: 3;
+        width: 200px;
+        height: 260px;
       }
 
       .particle-3 {
@@ -553,7 +583,7 @@
         z-index: 4;
       }
 
-      @keyframes particleFloat {
+      @keyframes particleFloatHorizontal {
         0%,
         100% {
           opacity: 0;
@@ -801,8 +831,18 @@
         }
 
         .hero-right {
-          height: 300px;
+          height: 400px;
           margin-top: 40px;
+        }
+
+        .hero-right img {
+          width: 150px;
+          height: 200px;
+        }
+
+        .hero-right img:nth-child(2) {
+          width: 170px;
+          height: 220px;
         }
 
         .appointment {
@@ -818,6 +858,16 @@
         .image-dispersed-container {
           margin-left: 0;
           height: 400px;
+        }
+
+        .image-particle {
+          width: 150px;
+          height: 200px;
+        }
+
+        .particle-2 {
+          width: 170px;
+          height: 220px;
         }
 
         .footer-container {
@@ -865,17 +915,26 @@
           padding: 20px 20px 80px;
         }
 
+        .hero::before {
+          height: 120px;
+        }
+
         .hero-left h1 {
           font-size: 36px;
         }
 
         .hero-right {
-          height: 250px;
+          height: 350px;
         }
 
         .hero-right img {
-          width: 150px;
-          height: 150px;
+          width: 120px;
+          height: 160px;
+        }
+
+        .hero-right img:nth-child(2) {
+          width: 140px;
+          height: 180px;
         }
 
         .stats {
@@ -903,6 +962,16 @@
 
         .image-dispersed-container {
           height: 300px;
+        }
+
+        .image-particle {
+          width: 120px;
+          height: 160px;
+        }
+
+        .particle-2 {
+          width: 140px;
+          height: 180px;
         }
 
         .why-card {
